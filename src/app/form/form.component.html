@@ -1,0 +1,32 @@
+
+<form [formGroup]="form">
+  <div class="form-content">
+    <input type="text" placeholder="Nome" formControlName="nome">
+    <small *ngIf="form.controls.nome.invalid && !form.controls.nome.pristine">
+      Este campo deve conter entre 3 e 100 caracteres
+    </small>
+
+    <input type="text" placeholder="Idade" formControlName="idade" minlength="2" maxlength="2">
+    <small *ngIf="form.controls.idade.invalid && !form.controls.idade.pristine">
+      Este campo deve conter 18 anos a 99 anos
+    </small>
+
+    <select formControlName="sangue">
+      <option value="A+">A+</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="AB+">AB+</option>
+      <option value="AB-">AB-</option>
+      <option value="O+">O+</option>
+      <option value="O-">O-</option>
+    </select>
+    <small *ngIf="form.controls.sangue.invalid && !form.controls.sangue.pristine">
+      Este campo é obrigatório
+    </small>
+  </div>
+
+  <button class="btn btn-sm btn-primary-100" [disabled]="form.invalid" (click)="add()">
+    Me cadastre
+  </button>
+</form>

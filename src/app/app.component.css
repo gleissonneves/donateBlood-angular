@@ -1,0 +1,43 @@
+section .content {
+    padding: 20px 10px;
+}
+
+section .content .section-title {
+    font-size:2rem;
+    color: var(--primary-200);
+    margin-bottom: 1.5rem;
+}
+
+section .content .section-title span {
+    font-size:2.5rem;
+    color: var(--secundary-100);
+}
+
+section .content ul li {
+    position:relative;
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    margin-right: .25rem;
+    padding-top: .5rem;
+    border-radius: 50%;
+    background-color: var(--primary-200);
+    color:#ffffff;
+    text-align: center;
+    font-family: var(--open-sans);
+    font-size: 13px;    
+}
+
+section .content ul li::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 28%;
+    display: block;
+    height: 15px;
+    width: 15px;    
+    background-color: var(--primary-200);
+    transform: rotate(45deg);
+    z-index: -1;
+    border-radius: .15rem;
+}
